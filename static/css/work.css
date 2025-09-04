@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+body{
+  background: linear-gradient(-45deg, #121212, #1e1e1e, #270552, #01554d);
+  background-size: 400% 400%;
+  animation: darkGradient 8s ease infinite;
+  color: #fff;
+  font-family: sans-serif;
+}
+@keyframes darkGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header{
+  background-color: rgba(0, 0, 0, 0.322);
+  width: 100%;
+  height: 1cm;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between ;
+}
+.ha{
+  margin-left: 20px;
+  text-decoration: none;
+  color: #857878;
+}
+ .links , .a{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 25px;
+  font-size: 29px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+a:hover{
+  color: aliceblue;
+  scale: 1.2;
+}
+#view{
+  height: 14cm;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1cm; 
+}
+.content{
+  margin-top: 100px;
+ margin-left:220px ;
+ width: 440px;;
+}
+.img{
+  border-radius:50%;
+  width: 9cm;
+  height: 9cm;
+  background-image: url(11.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 23cm;
+  bottom: 4cm;
+  box-shadow: 10px 10px 20px 10px rgb(0, 0, 0);
+}
+button{
+  border-radius: 10px;
+  height: 1cm;
+  width: 3cm;
+  background-color: blue;
+  border: none;
+  transition: 0.6s;
+}
+button:hover{
+  scale:1.2;
+  cursor: pointer;
+  opacity: .85;
+}
+.titles{
+    width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: x-large;
+  font-style: oblique;
+  text-transform: capitalize;
+  color: darkred;
+}
+.overk{
+
+  display: flex;
+  justify-content: space-around;
+  height: 6cm;
+    margin: 20px 80px;
+}
+.overflow{
+  background-color: rgba(250, 235, 215, 0.027);
+  margin: 10px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px black;
+ overflow: auto;
+  height: 6cm;
+ width: 45%;
+  position: absolute;
+  left: 2cm;
+  font-size: x-large;
+  padding: 10px;
+}
+.skils {  
+  width: 40%;
+  position: absolute;
+  left: 20cm;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.p, .j, .c, .h, .d, .b{
+  color: rgba(0, 0, 255, 0);
+line-height: 1cm;
+margin: 10px;
+height:42px;
+width: 100px;
+transition: 0.8s;
+display: flex;
+justify-content: center;
+}
+.p:hover{
+  border-radius: 10px;
+  color: #171a19;
+  cursor: pointer;
+  scale:1.2;
+  opacity: .85;
+  background-color:rgb(0, 0, 245);
+}.b:hover{
+   border-radius: 10px;
+  width: 115px;
+  color: #101111;
+  cursor: pointer;
+  scale:1.2;
+  opacity: .85;
+  background-color:rgba(187, 125, 202, 0.76) 
+}.d:hover{
+   border-radius: 10px;
+   color: #0a0a0a;
+  cursor: pointer;
+  scale:1.2;
+  opacity: .85;
+   background-color: rgba(0, 128, 0, 0.808);
+}.c:hover{
+   border-radius: 10px;
+   color: #131414;
+  cursor: pointer;
+  scale:1.2;
+  opacity: .85;
+   background-color: rgba(167, 135, 231, 0.781);
+}.h:hover{
+   border-radius: 10px;
+   color: #151817;
+  cursor: pointer;
+  scale:1.2;
+  opacity: .85;
+   background-color: rgb(253, 168, 134);
+}.j:hover{
+   border-radius: 10px;
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+   color: #121414;
+  cursor: pointer;
+  scale:1.2;
+  opacity: .85;
+   background-color:rgba(201, 201, 20, 0.568) ;
+}
+.tp{
+  font-size: 40px;
+  text-transform: capitalize;
+  color: darkred;
+  display: flex;
+  justify-content: center;
+
+}
+#posts{
+  min-height: 8cm;
+  width: 100%;
+}
+.cd{
+  width: 20%;
+  height: 12cm;
+  margin: 10px;
+  background-color: rgba(27, 27, 214, 0);
+  padding: 10px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px black; 
+ box-sizing: border-box;
+
+}
+.cd:hover{
+  cursor: pointer;
+  scale:1.05;
+
+}
+form{
+  display: flex;
+  flex-wrap: wrap;
+}
+.imc{
+  width: 100%;
+  height: 40%;
+  background-color: rgb(172, 23, 23);
+}
+.pc{
+  color: blue;
+  height: 40%;
+  width: 100%;
+  margin: 10px;
+}
+.bot{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.ba{
+  text-decoration: none;
+  color: #0a0a0a;
+}
+
+.tc{
+  font-size: 40px;
+  text-transform: capitalize;
+  color: darkred;
+  display: flex;
+  justify-content: center;
+}
+.mc{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.msg{
+  height: 15cm;
+  width: 13cm;
+  background-color: rgba(250, 235, 215, 0);
+  position: relative;
+  right: 2cm;
+  margin: 10px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px black;
+  
+}
+
+.inpm{
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1cm;
+   position: relative;
+  top: 40px;
+
+}
+#u , #e {
+ height: 1cm;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 5px;
+   background-color: #0fdad0c9;
+}
+#m{
+  height: 220px;
+  border-radius: 10px;
+  border: none;
+  padding-top: 10px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  background-color: #13cee7c9;
+}
+#s{
+  height: 1cm;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  background-color: darkgreen;
+  font-size: 25px;
+  transition: 0.5s;
+}
+#s:hover{
+  box-shadow: 0 0 19px black;
+  cursor: pointer;
+}
+#m:focus{
+    box-shadow: 0 0 19px rgb(32, 92, 14);
+}
+#e:focus{
+    box-shadow: 0 0 19px rgb(32, 92, 14);
+}
+#u:focus{
+    box-shadow: 0 0 19px rgb(32, 92, 14);
+}
+.coment{
+  min-height: 15cm;
+  width: 13cm;
+  background-color: rgba(250, 235, 215, 0.027);
+  position: relative;
+  right: 2cm;
+  margin: 10px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px black;
+ overflow: auto;
+}
+#l{
+  background-color: rgba(26, 206, 155, 0.726);
+  min-height: 2cm;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  margin: 10px 0px;
+}
+.scrol{
+  opacity: 0;
+  transform: translatex(30);
+  transition: all 2s ease ;
+}
+.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+.fgl{
+padding: 10px;
+background: none;
+transition: 0.6s;
+}
+.fgl:hover{
+   scale:1.4;
+  cursor: pointer;
+  opacity: .85;
+}
+

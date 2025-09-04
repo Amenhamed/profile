@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>تعديل التعليق</title>
+     <link rel="stylesheet" href="{% static 'css/work.css' %}">
+</head>
+<body>
+    <h1>تعديل التعليق</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="save" id="s">
+    </form>
+</body>
+</html>

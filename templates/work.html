@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/work.css' %}
+    ">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMEN</title>
+
+</head>
+<body>
+    <header>
+       <h1><a href="#view" class="ha">AMEN</a></h1> 
+        <div class="links">
+            <a href="#about" class="a">about</a>
+            <a href="#posts" class="a">projects</a>
+            <a href="#contact" class="a">contact</a>
+        </div>
+    </header>
+    <br>
+    <div id="view" >
+        <div class="content">
+          <h1 style="color: brown; " id="tp"></h1>
+          <p style="font-size: larger;" > <i>Using the latest front-end and back-end technologies, I create fast, secure, and visually engaging digital experiences.
+                My goal is to deliver a product that excels in performance and design, leaving a lasting impression on your users."</i></p>
+
+          <button >view projects</button>
+          <br><br> 
+        <span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" width="50" class="fgl">
+            <img src="https://cdn.simpleicons.org/github" alt="GitHub Icon" width="50" class="fgl">
+            <img src="https://cdn.simpleicons.org/facebook" alt="Facebook Icon" width="50" class="fgl">
+        </span>
+          <div class="img"></div>
+        </div>
+    </div>
+    <br><br>
+    <div id="about" class="scrol ">
+        <div class="titles">
+            <h1>who i am</h1>
+            <h1>my skils</h1>
+        </div>
+        <div class="overk">
+            <div class="overflow">
+                
+<i>
+    I am Amen Allah Hamed, a Full-Stack Developer skilled in building both front-end and back-end solutions using JavaScript, Python, Django, Bootstrap, CSS, and HTML. For me, programming is not just a profession, but a passion that combines creativity, problem-solving, and innovation.
+
+At the start of my professional journey, I am focused on establishing a solid foundation of skills and experiences that will lead to creating impactful projects such as blogs, manga reading platforms, and innovative web systems. My vision is to build a strong name in the freelance world by combining technical expertise with a creative mindset.
+
+I hold a <a href="https://www.sololearn.com/certificates/CC-VZJHBLYT">Python Developer certificate
+    </a>from SoloLearn <br>and a <a href="https://freecodecamp.org/certification/amenhamed/responsive-web-design
+
+">Web Design (HTML & CSS) certificate</a>   from FreeCodeCamp, and I continuously work on improving my skills to reach the highest level of professionalism.
+</i>
+
+
+            </div>
+            <div class="skils">
+                <div  class="p">
+                    <img src= "https://cdn.simpleicons.org/python" alt="Python Icon" width="40" class="python"><h4>PYTHON</h4>
+                </div>
+                <div class="d">
+                    <img src="https://cdn.simpleicons.org/django" alt="Django Icon" width="40"><h4>DJANGO</h4>
+                </div>
+                <div class="b">
+                    <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap Icon" width="40"><h4>BOOSTRAP</h4>
+                </div>
+                <div class="h">
+                    <img src="https://cdn.simpleicons.org/html5" alt="HTML5 Icon" width="40"><h4>HTML</h4>
+                </div>
+                <div class="c">
+                    <img src="https://cdn.simpleicons.org/css" alt="CSS3 Icon" width="40"><h4>CSS</h4>
+                </div>
+                <div class="j" >
+                    <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript Icon" width="40"><h4>JS</h4>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <br><br>
+       <div id="posts" class="scrol">
+         <h1 class="tp">my projects</h1>
+          <form action="" method="post" >
+        {% csrf_token %}
+        <input type="hidden" name="action" value="post">
+        {% for x in pro %}
+             <div class="cd">
+                   {% if x.image %}
+                <img src="{{ x.image.url }}" alt="" class="imc">
+                {% else %}
+                  <p>NO IMAGE</p>
+            {% endif %}
+            <h2 style="color: brown;">{{x.head}}</h2>
+            <p class="pc">{{x.deatil}}</p>
+            <div class="bot">
+                <button ><a href="https://github.com/Amenhamed?tab=projects" class="ba">View CODE</a></button> 
+                <button ></button>
+            </div>
+           
+         </div>
+         {% endfor %}
+        </form>
+    </div>
+    <br>
+    <div id="contact" class="scrol ">
+        <h1 class="tc"> lets work together</h1>
+         <div class="mc">
+        <div class="msg">
+            <h1 class="tc">SEND A MESSAGE</h1>
+        <form action="" method="post" class="inpm">
+            {% csrf_token %}
+                 <input type="hidden" name="action" value="contact">
+            <input type="text" name="username" id="u" placeholder="username">
+            <br>
+           <input type="email" name="email" id="e" placeholder="email">
+           <br>
+          <textarea name="message" id="m"></textarea>
+           <br>
+           <input type="submit" value="send" id="s">
+        </form>
+            </div>
+        <div class="coment">
+            <h1 class="tc">COMMENT</h1>
+            <form action="" method="post" class="inpm">
+                {% csrf_token %}
+                    <input type="hidden" name="action" value="comment">
+            <input type="text" name="name" id="u" placeholder="username">
+            <br>
+           <input type="text" name="comment" id="u" placeholder="coment">
+           <br>
+           <input type="submit" value="save" id="s">
+           <br>
+           {% for i in CT %}
+           <label for="e" id="l">
+            <h5>{{ i.name }}</h5>
+            <p>{{ i.comment }}</p>
+            <a href="{% url 'update' i.id %}">edit</a>
+            <a href="{% url 'delate' i.id %}">remove</a>
+           </label>
+           {% endfor %}
+        </div>  
+    <script src="{% static 'js/work.js' %}"></script>
+</body>
+</html>
