@@ -62,7 +62,7 @@ a:hover{
   border-radius:50%;
   width: 9cm;
   height: 9cm;
-  background-image: url(11.jpg);
+  background-image: url('../image/13.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -347,4 +347,96 @@ transition: 0.6s;
   cursor: pointer;
   opacity: .85;
 }
-
+@media (max-width:1023px){
+header{
+  width: 450px;
+}
+.ha{
+  margin-left: 10px;
+}
+.links , .a{
+  width: 70%;
+  margin: 3px;
+  font-size: 21px;
+}
+#view{
+  height: 12cm;
+}
+.content{
+  margin-top: 100px;
+ margin-left:22px ;
+ width: 450px;;
+}
+.tp{
+  font-size: 30px;
+}
+.img{
+  left: 13cm;
+  bottom: 4cm;
+}
+.overk{
+  width: 450px;
+  height: 6cm;
+    margin: 20px 0px;
+}
+.overflow{
+  margin: 10px;
+  height: 5cm;
+ width: 370px;
+  font-size: large;
+  position: relative;
+  left: 0cm;
+  padding: 10px;
+}
+.sk{
+    margin: 20px 20px;
+  width: 100%;
+  position: absolute;
+  left: 1.7cm;
+  top: 7cm;
+}
+.skils {  
+  margin: 10px;
+  width: 100%;
+  position: absolute;
+  left: 0cm;
+  top: 9cm;
+  display: flex;
+  flex-direction: row;
+  
+}
+.cd{
+  width: 340px;
+  margin: 15px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+#posts{
+  position: relative;
+  top: 5cm;
+}
+#contact{
+   position: relative;
+  top: 4cm;
+}
+.mc{
+    display: flex;
+  flex-direction: column;
+  position: relative;
+  right: -3cm;
+}
+.msg , .coment{
+  width: 359px;
+  position: relative;
+  right: 3cm;
+}
+.tc{
+  padding: 15px;
+}
+.lgf{
+ position: relative;
+ bottom:  15px;
+}
+}

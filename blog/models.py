@@ -1,7 +1,7 @@
 from django.db import models
 class comment (models.Model):
-    name = models.TextField(max_length=20 , null=True)
-    comment = models.TextField(null=True)
+    name = models.CharField(max_length=20 , null=True)
+    comment = models.CharField(null=True)
     ip =models.GenericIPAddressField(null=True)
     created_at =models.DateTimeField(auto_now_add=True)
     def __str__(self):

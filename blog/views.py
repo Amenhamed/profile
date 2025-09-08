@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect
 from.models import comment , message , posts
-from.form import CommentForm
+from.forms import CommentForm
 # Create your views here.
 def first (request):
     if request.method =='POST':

@@ -9,9 +9,12 @@
 <body>
     <h1>تعديل التعليق</h1>
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" >
         {% csrf_token %}
-        {{ form }}
+        {{ form }} 
+           
+        
+        
         <input type="submit" value="save" id="s">
     </form>
 </body>
