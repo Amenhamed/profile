@@ -12,6 +12,6 @@ class message (models.Model):
     message =models.TextField(null=True)
 class posts (models.Model):
     head =models.CharField(max_length=20 , null=True)
-    image=models.ImageField( upload_to='photos\%y\%m\%d', null=True)
+    image=models.ImageField( upload_to='photos/%y/%m/%d', null=True)
     deatil =models.TextField(null=True)
 # Create your models here.
