@@ -8,13 +8,12 @@
 </head>
 <body>
     <h1>تعديل التعليق</h1>
-{% if c.session_id == request.session.session_key %}
     <form method="POST" enctype="multipart/form-data" >
         {% csrf_token %}
         {{ form }} 
            
         <input type="submit" value="save" id="s">
-{% endif %}
+
     </form>
 </body>
 </html>

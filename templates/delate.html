@@ -8,13 +8,12 @@
 </head>
 <body>
     <h1>ARE YOU SUCHER YOU WANT RMOVE </h1>
-{% if c.session_id == request.session.session_key %}
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
        
         <BUtton type="submit">YES</BUtton>
         <BUtton type="button" ><a href="/">NO</a></BUtton>
     </form>
-{% endif %}
+
 </body>
 </html>

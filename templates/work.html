@@ -137,8 +137,10 @@ I hold a <a href="https://www.sololearn.com/certificates/CC-VZJHBLYT">Python Dev
            <label for="e" id="l">
             <h5>{{ i.name }}</h5>
             <p>{{ i.comment }}</p>
+            {% if CT.session_id == request.session.session_key %}
             <a href="{% url 'update' i.id %}">edit</a>
             <a href="{% url 'delate' i.id %}">remove</a>
+            {% endif %}
            </label>
            {% endfor %}
         </div>  
