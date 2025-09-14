@@ -10,7 +10,7 @@ def first (request):
     if request.method =='POST':
         N=request.POST.get('name')
         C=request.POST.get('comment')
-        if not comment.objects.filter(ip=session_id).exists():
+        if not comment.objects.filter(session_id=session_id).exists():
             data = comment( name = N , comment = C , ip=session_id)
             data.save()
             return redirect('home') # type: ignore
