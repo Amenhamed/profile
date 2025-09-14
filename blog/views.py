@@ -2,25 +2,28 @@ from django.shortcuts import render , redirect
 from.models import comment , message , posts
 from.forms import CommentForm
 # Create your views here.
-def first (request):
-        # إنشاء session إذا لم يكن موجود
+def first(request):
+    # إنشاء session إذا لم يكن موجود
     if not request.session.session_key:
         request.session.create()
     session_id = request.session.session_key
-    if request.method =='POST':
-        N=request.POST.get('name')
-        C=request.POST.get('comment')
-        if not comment.objects.filter(session_id=session_id).exists():
-            data = comment( name = N , comment = C , session_id=session_id)
-            data.save()
-            return redirect('home') # type: ignore
+    if request.method == 'POST':
+        N = request.POST.get('name')
+        C = request.POST.get('comment')
+        # السماح للزائر بكتابة تعليق واحد فقط
+        if comment.objects.filter(session_id=session_id).exists():
+            error_message = "You already wrote a comment"
         else:
-            # إذا حاول الزائر إضافة تعليق ثاني
-            return render(request, 'work.html', {
-                'CT': comment.objects.all(),
-                'error': "you alreday whriting comment"
-            })
-    return render(request , 'work.html'  , {'CT':comment.objects.all()} )
+            comment.objects.create(name=N, comment=C, session_id=session_id)
+            return redirect('home')  # إعادة التوجيه بعد إضافة التعليق
+        # عرض جميع التعليقات مع رسالة الخطأ للزائر نفسه
+        return render(request, 'work.html', {
+            'CT': comment.objects.all(),
+            'error': error_message
+        })
+    # عرض جميع التعليقات بدون رسالة خطأ إذا لم يتم POST
+    return render(request, 'work.html', {'CT': comment.objects.all()})
+
 def contact (request):
     if request.method == 'POST':
         un=request.POST.get('username')
