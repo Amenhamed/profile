@@ -3,14 +3,23 @@ from.models import comment , message , posts
 from.forms import CommentForm
 # Create your views here.
 def first (request):
+        # إنشاء session إذا لم يكن موجود
+    if not request.session.session_key:
+        request.session.create()
+    session_id = request.session.session_key
     if request.method =='POST':
         N=request.POST.get('name')
         C=request.POST.get('comment')
-        ip =request.META.get('REMOTE_ADDR') # bech man3awdouch ta3li9at
-        if not comment.objects.filter(ip=ip).exists():
-            data = comment( name = N , comment = C , ip=ip)
+        if not comment.objects.filter(ip=session_id).exists():
+            data = comment( name = N , comment = C , ip=session_id)
             data.save()
             return redirect('home') # type: ignore
+        else:
+            # إذا حاول الزائر إضافة تعليق ثاني
+            return render(request, 'work.html', {
+                'CT': comment.objects.all(),
+                'error': "you alreday whriting comment"
+            })
     return render(request , 'work.html'  , {'CT':comment.objects.all()} )
 def contact (request):
     if request.method == 'POST':
